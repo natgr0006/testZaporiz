@@ -1,0 +1,232 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+.outer {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/mainBanner.jpg);
+    background-position-x: 0%, 0%;
+    background-position-y: 0%, 0%;
+    background-repeat: repeat, repeat;
+    background-size: auto, auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: $white;
+}
+
+.header {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 35px;
+    }
+    &__btn {
+        background-color: $red;
+        color: $white;
+        border: none;
+        padding-left: 58px;
+        padding-right: 58px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: $white;
+            color: $red;
+        }
+    }
+}
+
+.menu {
+    padding-left: 15px;
+    padding-right: 15px;
+    &__list {
+        display: flex;
+    }
+    &__list-item+.menu__list-item {
+        padding-left: 50px;
+    }
+    &__list-link {
+        color: $white;
+    }
+}
+
+.main {
+    &__inner {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    &__title {
+        @extend %title-font;
+        font-size: 72px;
+        line-height: 108px;
+        max-width: 750px;
+        text-align: center;
+        padding-bottom: 30px;
+        margin: 0 auto;
+    }
+    &__info {
+        max-width: 530px;
+        text-align: center;
+        padding-bottom: 25px;
+        margin: 0 auto;
+    }
+    &__arrow {
+        padding-bottom: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+.main__order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    border-radius: 5px;
+    &-title {
+        margin-top: 36px;
+        padding-bottom: 20px;
+        @extend %title-font;
+        font-weight: 400;
+        font-size: 27px;
+    }
+}
+
+.order__input,
+.order__select {
+    background: linear-gradient(rgba(74, 74, 74, 0.6), rgba(74, 74, 74, 0.6));
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 300px;
+    margin-bottom: 24px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.order__btn {
+    margin-bottom: 35px;
+}
+
+//===Testimonials===/
+.testimonials {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    &__header {
+        text-align: center;
+        @extend %title-font;
+        font-size: 48px;
+        font-weight: 400;
+        padding-bottom: 35px;
+    }
+    &__btn {
+        border: 2px solid $red;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+        background: transparent;
+        color: $red;
+        padding: 10px 50px;
+        margin-top: 38px;
+        cursor: pointer;
+        &:hover {
+            background: $red;
+            color: $white;
+        }
+    }
+}
+
+//===Slider===//
+.slider {
+    position: relative;
+}
+
+.slider__item {
+    padding-top: 40px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 43%;
+    z-index: 10;
+}
+
+.slick-prev {
+    left: 66vh;
+}
+
+.slick-next {
+    right: 66vh;
+}
+
+.slick-prev:before {
+    content: url('../images/arrow-left.png');
+}
+
+.slick-next:before {
+    content: url('../images/arrow-right.png');
+}
+
+.slick-arrow {
+    border: none;
+    background-color: transparent;
+    font-size: 0;
+}
+
+.slider__add {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media screen and (max-width: 900px) {
+    .slick-arrow {
+        position: absolute;
+        top: 100%;
+        z-index: 10;
+    }
+    .slick-prev {
+        left: 40vh;
+    }
+    .slick-next {
+        right: 40vh;
+    }
+    .header__inner {
+        flex-direction: column;
+    }
+    .logo,
+    .menu {
+        padding-bottom: 40px;
+    }
+    .slider__item {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .slick-arrow {
+        position: absolute;
+        top: 42%;
+        z-index: 10;
+    }
+    .slick-prev {
+        left: 1vh;
+    }
+    .slick-next {
+        right: 1vh;
+    }
+    .slider__item {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
